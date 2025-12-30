@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/* HEADER */
+#header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #111;
+}
+.header_inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  height: 70px;
+  margin: 0 auto;
+}
+/* LOGO */
+.logo img {
+  width: 160px;
+  margin-bottom: 4px;
+  -webkit-filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
+}
+.logo img:hover {
+  -webkit-filter: none; 
+  filter: none;
+}
+/* GNB */
+.gnb {
+  display: flex;
+}
+.gnb > ul {
+  display: flex;
+  gap: 28px;
+}
+.gnb_left {
+  position: absolute;
+  left: 0;
+}
+.gnb_right {
+  position: absolute;
+  right: 0;
+}
+.gnb_menu {
+  position: relative;
+}
+.gnb_menu > a {
+  padding: 26px 0;
+  color: #fff;
+}
+.gnb_menu svg {
+  margin-left: 4px;
+}
+.gnb_menu:hover svg {
+  -webkit-filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
+}
+/* SUB MENU */
+.sub_menu {
+  position: absolute;
+  top: 100%; left: -20%;
+  flex-direction: column;
+  background: #111;
+  min-width: 180px;
+  padding: 20px 0 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+.gnb_menu:last-child {
+  margin-top: 2px;
+}
+.gnb_menu::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 1px;
+  background: #ff0000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.gnb_menu:hover::after {
+  transform: scaleX(1);
+}
+.gnb_right .gnb_menu:last-child::after {
+  content: none;
+}
+.gnb_menu:hover .sub_menu {
+  opacity: 1;
+  visibility: visible;
+}
+.sub_menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #ccc;
+  transition: 0.25s ease;
+}
+.sub_menu li a:hover {
+  color: #fff;
+  transform: translateX(6px);
+}
+
+
+/* common */
+:root {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  padding-top: 60px;
+}
+body {
+  font: 1.5rem/1.7 'FlightSans', sans-serif;
+}
+/* full page */
+.wrap {
+  width: 100%;
+}
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} 
+.pager {
+  position: fixed;
+  right: 30px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+.pager li {
+  width: 16px; height: 2px;
+  margin: 16px 0;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.pager li.active {
+  background: #fff;
+  transform: scale(1.4);
+}
+
+/* reset */
+* {
+  box-sizing: border-box;
+}
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, pre, a,
+img, strong, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, tr, th, td,
+footer, header,
+nav,
+audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+ol, ul {
+	list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+address {
+  font-style: normal;
+}
