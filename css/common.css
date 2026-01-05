@@ -1,5 +1,61 @@
 @charset "utf-8";
 
+.login_menu {
+  position: relative;
+}
+.login_popup {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  display: none;
+  z-index: 1000;
+}
+.login_arrow {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+.login_box {
+  width: 600px; height: 700px;
+  background: #fff;
+  padding: 32px 16px;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.login_box h1 {
+  margin-bottom: 16px;
+}
+.login_box input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  background: #fafafa;
+}
+.user_submit {
+  width: 100%;
+  padding: 8px;
+  background: #c92a2a;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login_links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.login_links a,
+.other a {
+  margin-right: 8px;
+  color: #555;
+}
+.other img {
+  margin: 30px 0 10px;
+}
+
 /* HEADER */
 #header {
   position: fixed;
@@ -35,6 +91,7 @@
 }
 .gnb > ul {
   display: flex;
+  align-items: center;
   gap: 28px;
 }
 .gnb_left {
@@ -47,6 +104,9 @@
 }
 .gnb_menu {
   position: relative;
+}
+.fz {
+  font-size: 1.2rem;
 }
 .gnb_menu > a {
   padding: 26px 0;

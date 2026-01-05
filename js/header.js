@@ -68,10 +68,40 @@ $(document).ready(function () {
             <li class="gnb_menu">
               <a href="https://universe.leagueoflegends.com/ko_KR/">유니버스<svg width="10" height="10" viewBox="0 0 16 16"><title>mainNavLinkOut</title><path fill-rule="evenodd" clip-rule="evenodd" d="M12.916 4.158c0-.277-.116-.55-.32-.753a1.073 1.073 0 0 0-.752-.32H3.428l.144 2h5.93l-6.803 6.803 1.414 1.414L10.916 6.5v5.928l2 .144V4.158Z" fill="#737373"></path></svg></a>
             </li>
-            <li class="gnb_menu">
-              <a href="#">로그인</a>
-            </li>
-            <li class="gnb_menu">
+            <li class="gnb_menu fz login_menu">
+  <a href="#" class="login_btn">로그인</a>
+
+  <!-- 로그인 말풍선 -->
+  <div class="login_popup">
+    <span class="login_arrow"></span>
+    <div class="login_box">
+      <div>
+        <h1>로그인</h1>
+        <input type="text" placeholder="계정이름">
+        <input type="password" placeholder="비밀번호">
+        <button class="user_submit">로그인</button>
+        <div class="login_links">
+          <a href="#">로그인이 안 되시나요?</a>
+          <div>
+            <a href="#">아이디 찾기</a>
+            <a href="#">비밀번호 찾기</a>
+          </div>
+        </div>
+      </div>
+      <div class="other">
+        <img src="/assets/img/arcane_dsktp_centerAlignedCrd_BG_2x.jpg" alt="">
+        <div>
+          <a href="#">고객지원</a>
+          <a href="#">개인정보 처리방침</a>
+          <a href="#">서비스 약관</a>
+          <a href="#">쿠키 설정</a>
+          <p>이 사이트는 hCaptcha로 보호되고 있으며 hCaptcha의 <a href="#">개인정보 처리방침</a> 및 <a href="#">서비스 약관</a>이 적용됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+            <li class="gnb_menu fz">
               <a href="#">회원가입</a>
             </li>
             <li class="gnb_menu">
@@ -101,6 +131,20 @@ $(document).ready(function () {
     });
   });
 
+  const loginBtn = document.querySelector('.login_btn');
+const loginPopup = document.querySelector('.login_popup');
 
+loginBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  loginPopup.style.display =
+    loginPopup.style.display === 'block' ? 'none' : 'block';
+});
+
+// 바깥 클릭 시 닫기
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.login_menu')) {
+    loginPopup.style.display = 'none';
+  }
+});
 
 });
