@@ -23,6 +23,7 @@
   margin-bottom: 4px;
   -webkit-filter: brightness(0) invert(1); 
   filter: brightness(0) invert(1);
+  transition: .3s;
 }
 .logo img:hover {
   -webkit-filter: none; 
@@ -63,9 +64,10 @@
   position: absolute;
   top: 100%; left: -20%;
   flex-direction: column;
-  background: #111;
   min-width: 180px;
   padding: 20px 0 10px;
+  background: #111;
+  font-size: 1.4rem;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
@@ -118,7 +120,7 @@
   max-width: 1400px;
   height: 300px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 20px 40px;
 }
 /* INFO */
 .footer img {
@@ -134,6 +136,7 @@
 .footer_links {
   display: flex;
   gap: 60px;
+  font-size: 1.3rem;
 }
 .footer_col ul li {
   margin-bottom: 8px;
@@ -183,6 +186,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 } 
 .pager {
   position: fixed;

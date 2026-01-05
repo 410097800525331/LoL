@@ -14,21 +14,214 @@
   <div class="wrap">
     <!-- video_section -->
     <section class="page video_section">
-      <video src="img/vid/vid-main.webm" autoplay loop muted playsinline></video>
+      <video src="assets/vid/vid-main.webm" autoplay loop muted playsinline></video>
       <div class="video_overlay">
-        <img src="img/img/lol_Logo.avif" alt="Logo">
+        <img src="assets/img/lol_Logo.avif" alt="Logo">
         <h3>리그 오브 레전드는 팀끼리 전투를 펼치고 상대 넥서스를 파괴해야 하는 5대5 MOBA 게임입니다.</h3>
-        <a href="#" class="video_btn">무료로 플레이하기</a>
+        <a class="btn_w" href="#">무료로 플레이하기</a>
       </div>
     </section>
-    <section class="page page2">Page 2</section>
-    <section class="page page3">Page 3</section>
-    <section class="page page4">Page 4</section>
+    <!-- value_section -->
+    <section class="page value_section">
+      <div class="value_inner">
+        <div class="value_overlay">
+          <div class="value_text">
+            <h3>챔피언을 <span>선택하세요</span></h3>
+            <p>적진으로 돌격하거나 팀원을 보조하는 등, 소환사의 협곡에는 다양한 역할군이 있습니다.</p>
+            <a class="btn_w" href="#">더 많은 챔피언 알아보기</a>
+            <a class="btn_w" href="#">지금 플레이하기</a>
+          </div>
+        </div>
+        <img class="char show" src="assets/img/befd42ad6d2564159a441d08cfc3bf511532eb74-1628x1628.webp" alt="champion">
+        <ul class="value_list">
+          <li class="value_item active" data-bg="assets/img/Akali_0.jpg"
+            data-char="assets/img/befd42ad6d2564159a441d08cfc3bf511532eb74-1628x1628.webp">
+            <img src="assets/img/e1511d4d93a84b836844c77b4ff96b1cf65f4f8d-220x220.webp" alt="암살자 icon">
+            <p>암살자</p>
+          </li>
+          <li class="value_item" data-bg="assets/img/Yasuo_0.jpg"
+            data-char="assets/img/70c26e49de8a2c79ac3de144772d2debd195edff-1628x1628.avif">
+            <img src="assets/img/651b0a4388dffbb709588546d7d73fd1a4e5b45d-220x220.webp" alt="전사 icon">
+            <p>전사</p>
+          </li>
+          <li class="value_item" data-bg="assets/img/Lux_0.jpg "
+            data-char="assets/img/ff6c8c57411e5c7e0551b02334fccedc78866143-1628x1628.avif">
+            <img src="assets/img/9872a60add3d215d217eda67e08a07ef7191ab89-220x220.avif" alt="마법사 icon">
+            <p>마법사</p>
+          </li>
+          <li class="value_item" data-bg="assets/img/Jinx_0.jpg"
+            data-char="assets/img/f136500bd46f823d37515a72b867425d3a0b3e54-1628x1628.png">
+            <img src="assets/img/fce8a3c7b1267ce428530fa845dd3f970772d5cd-220x220.avif" alt="원거리 딜러 icon">
+            <p>원거리 딜러</p>
+          </li>
+          <li class="value_item" data-bg="assets/img/Thresh_0.jpg"
+            data-char="assets/img/dbdded937cd214bb2a1189697a9e4f49f8c04505-1628x1628.avif">
+            <img src="assets/img/1824a47af762aeac9d88d3bae5a4eb2ece928f0d-220x220.avif" alt="서포터 icon">
+            <p>서포터</p>
+          </li>
+          <li class="value_item" data-bg="assets/img/Leona_0.jpg"
+            data-char="assets/img/95daf6dd2b28f03d5ba2ea1fabbabc3bc3ff6e6e-1628x1628.avif">
+            <img src="assets/img/019898f21e749a5f6f71b609714d87f3fe084df5-220x220.avif" alt="탱커 icon">
+            <p>탱커</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      const items = document.querySelectorAll('.value_item');
+      const valueInner = document.querySelector('.value_inner');
+      const charImgEl = document.querySelector('.char');
+
+      /* 초기 배경 */
+      const activeItem = document.querySelector('.value_item.active');
+      valueInner.style.backgroundImage = `url(${activeItem.dataset.bg})`;
+
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          items.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+
+          /* 배경 변경 */
+          valueInner.style.backgroundImage = `url(${item.dataset.bg})`;
+
+          /* 캐릭터 이미지 변경 */
+          if (item.dataset.char) {
+            charImgEl.classList.remove('show');
+            setTimeout(() => {
+              charImgEl.src = item.dataset.char;
+              charImgEl.classList.add('show');
+            }, 150);
+          }
+        });
+      });
+    </script>
+    <!--  -->
+    <section class="page play_section">
+        <div class="play_inner">
+          <div class="play_left">
+            <div class="skin_img">
+              <img src="assets/img/76c98a7d43d4185e9ce1c9e0cd6f9647fed75acd-1304x1304.webp" alt="챔피언 스킨">
+            </div>
+            <h3>개성 있는 <span>챔피언 스킨</span></h3>
+            <p>좋아하는 챔피언의 외형을 변경해 보세요.</p>
+            <a href="#" class="btn_w">지금 플레이하기</a>
+          </div>
+
+          <div class="play_right">
+            <ul class="mode_list">
+              <li class="mode_item active" data-video="videos/rift.mp4">
+                <img src="images/mode_rift.jpg" alt="">
+                <span>소환사의 협곡</span>
+              </li>
+              <li class="mode_item" data-video="videos/aram.mp4">
+                <img src="images/mode_aram.jpg" alt="">
+                <span>무작위 총력전</span>
+              </li>
+              <li class="mode_item" data-video="videos/tft.mp4">
+                <img src="images/mode_tft.jpg" alt="">
+                <span>전략적 팀 전투</span>
+              </li>
+            </ul>
+
+            <div class="video_area">
+              <video id="mode_video" autoplay muted loop playsinline>
+                <source src="videos/rift.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+        </div>
+    </section>
+    <script>
+      const modeItems = document.querySelectorAll('.mode_item');
+      const video = document.getElementById('mode_video');
+
+      modeItems.forEach(item => {
+        item.addEventListener('click', () => {
+          modeItems.forEach(el => el.classList.remove('active'));
+          item.classList.add('active');
+
+          const videoSrc = item.dataset.video;
+          video.src = videoSrc;
+          video.play();
+        });
+      });
+    </script>
+
+    <!-- highlight_section -->
+    <section class="page highlight_section">
+      <div class="video_section">
+        <video src="assets/vid/LOL_HOME_Footer_Masthead_Video.mp4" autoplay loop muted playsinline></video>
+        <div class="video_overlay">
+          <a class="btn_w" href="#">무료로 플레이하기</a>
+        </div>
+      </div>
+
+      <div class="highlight_inner">
+        <h1>주목할 만한 소식</h1>
+        <ul class="highlight_list">
+          <!-- 카드 1 -->
+          <li class="highlight_item">
+            <a href="#">
+              <div class="highlight_img_wrap">
+                <img src="assets/img/c1d412f408112f04dc09d41b8c9186ff1739aa89-1920x1080.avif" alt="라이엇 공지">
+              </div>
+              <div class="highlight_info">
+                <p><span class="highlight_category notice">공지</span>2025.12.22.</p>
+                <h2>
+                  라이엇 모바일 게임 및 서비스 앱 스토어 연령 등급 재조정 안내
+                </h2>
+                <p>
+                  한국 앱스토어 연령 체계 재조정에 따른 라이엇 모바일 게임 및 서비스 앱 연령 등급 변경 안내
+                </p>
+              </div>
+            </a>
+          </li>
+
+          <!-- 카드 2 -->
+          <li class="highlight_item">
+            <a href="#">
+              <div class="highlight_img_wrap">
+                <img src="assets/img/0a1ea90e5acb4272c356186889becce015797249-1920x1080.jpg" alt="라이엇 스토어">
+              </div>
+              <div class="highlight_info">
+                <p><span class="highlight_category story">라이엇 스토어</span>2025.12.19.</p>
+                <h2>
+                  [라이엇 스토어] 연말 홈파티 모먼트
+                </h2>
+                <p>
+                  Mech versus Minions (한글 개편판) 10% 기간할인도 만나보세요.
+                </p>
+              </div>
+            </a>
+          </li>
+
+          <!-- 카드 3 -->
+          <li class="highlight_item">
+            <a href="#">
+              <div class="highlight_img_wrap">
+                <img src="assets/img/e7306fb1a9e92c5c1b14bc8466e339813cafdfc3-1920x1080.jpg" alt="게임 업데이트">
+              </div>
+              <div class="highlight_info">
+                <p><span class="highlight_category update">게임 업데이트</span>2025.12.17.</p>
+                <h2>
+                  그웬 축제 테마 쇼케이스
+                </h2>
+                <p>
+                  그웬은 많을수록 좋습니다!
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- footer -->
     <footer class="footer">
       <div class="footer_inner">
         <!-- INFO -->
         <div>
-          <img src="img/img/Logo.svg" alt="Logo">
+          <img src="assets/img/Logo.svg" alt="Logo">
           <p class="footer_desc">
             라이엇게임즈코리아 유한회사 서울특별시 강남구 테헤란로 521 30층 (삼성동, 파르나스타워)<br>
             대표자 : 조혁진 | 대표전화 : 02-3454-1560 | FAX : 02-3454-1565 사업자등록번호 : 120-87-68488<br>
@@ -64,14 +257,20 @@
       </div>
       <div class="footer_bottom">
         <div>
-          ™ & © 2025 Riot Games, Inc. League of Legends and all related logos, characters, names and distinctive likenesses thereof are exclusive property of Riot Games, Inc. All Rights Reserved.
+          ™ & © 2025 Riot Games, Inc. League of Legends and all related logos, characters, names and distinctive
+          likenesses thereof are exclusive property of Riot Games, Inc. All Rights Reserved.
         </div>
         <div class="sns_links">
-          <a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img src="img/img/Youtube_logo.png" alt="Youtube Logo" title="Youtube"></a>
-          <a href="https://www.instagram.com/leagueoflegendskorea/"><img src="img/img/Instagram_logo.png" alt="Instagram Logo" title="Instagram"></a>
-          <a href="https://x.com/LeagueOfLegends"><img src="img/img/twitter_logo.png" alt="twitter Logo" title="twitter"></a>
-          <a href="https://www.reddit.com/r/leagueoflegends/"><img src="img/img/reddite_logo.webp" alt="reddite Logo" title="reddite"></a>
-          <a href="https://www.facebook.com/LeagueofLegendsKor?fref=ts"><img src="img/img/facebook_logo.png" alt="facebook Logo" title="facebook"></a>
+          <a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img src="assets/img/Youtube_logo.png"
+              alt="Youtube Logo" title="Youtube"></a>
+          <a href="https://www.instagram.com/leagueoflegendskorea/"><img src="assets/img/Instagram_logo.png"
+              alt="Instagram Logo" title="Instagram"></a>
+          <a href="https://x.com/LeagueOfLegends"><img src="assets/img/twitter_logo.png" alt="twitter Logo"
+              title="twitter"></a>
+          <a href="https://www.reddit.com/r/leagueoflegends/"><img src="assets/img/reddite_logo.webp" alt="reddite Logo"
+              title="reddite"></a>
+          <a href="https://www.facebook.com/LeagueofLegendsKor?fref=ts"><img src="assets/img/facebook_logo.png"
+              alt="facebook Logo" title="facebook"></a>
         </div>
       </div>
     </footer>

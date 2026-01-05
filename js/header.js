@@ -55,7 +55,7 @@ $(document).ready(function () {
           </ul>
         </nav>
         <!-- LOGO -->
-        <h1 class="logo"><a href="/"><img src="img/img/Logo.svg" alt="Logo"></a></h1>
+        <h1 class="logo"><a href="/"><img src="assets/img/Logo.svg" alt="Logo"></a></h1>
         <!-- RIGHT MENU -->
         <nav class="gnb gnb_right">
           <ul>
@@ -84,53 +84,4 @@ $(document).ready(function () {
   `;
 
   $("#header").append(header);
-
-  // footer
-  const footer = `
-    <footer id="footer">
-    <div class="inner">
-      <!-- footer left -->
-      <div class="footer_left">
-        <h1 id="logo"><img src="/assets/img/ecoteav_logo_white.png" alt="에코티브 로고"></h1>
-        <ul class="menu">
-          <li><a class="line" href="/basic/company_company_ci.html">회사소개</a></li>
-          <li><a class="line" href="/basic/company_location.html">오시는길</a></li>
-          <li><a class="line" href="#">개인정보취급방침</a></li>
-          <li><a class="line" href="#">이용약관</a></li>
-        </ul>
-        <!-- info -->
-        <address class="info">
-          <div>상호명 : 에코티브(ecoteav) &nbsp; 대표자 : 김아영 &nbsp; 이메일 : ecoteav@gmail.com</div>
-          <address>주소 : 06609 서울특별시 서초구 서운로 26길 5 토탈에코빌딩 B1</address>
-          <div>사업자등록번호 : 296-19-02426 &nbsp; 통신판매업신고번호 : 235-47-67891</div>
-          <div>평일 09:00~18:00 &nbsp; 주말 및 공휴일 휴무</div>
-          <div>국민 000000-00-000000 &nbsp; 예금주 : 에코티브(ecoteav)</div>
-        </address>
-        <div class="info_cs">CS CENTER <strong>010-0000-0000</strong></div>
-        <p class="copy">Copyrights &copy; 2023 by ecoteav. All Rights Reserved.</p>
-        <!-- SNS link -->
-        <div class="sns_link">
-          <a href="#"><i class="fa-brands fa-kakao-talk"></i></a>
-          <a href="#"><i class="fa-brands fa-twitch"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-      <!-- footer right form -->
-      <div class="footer_right">
-        <p class="msg">고객과 함께 성장하고 협력하며<br>더 나은 미래를 향해 나아가겠습니다.</p>
-        <form class="footer_form">
-          <div class="footer_row">
-            <input type="text" placeholder="이름" required>
-            <input type="text" placeholder="연락처" required>
-          </div>
-          <textarea placeholder="문의내용" required></textarea>
-          <button type="submit" class="btn_ basic_btn_w">문의하기</button>
-        </form>
-      </div>
-    </div>
-  </footer>
-  `;
-
-  $("#footer_wrap").append(footer);
 });
