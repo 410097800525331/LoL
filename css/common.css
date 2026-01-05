@@ -107,6 +107,85 @@
   color: #fff;
   transform: translateX(6px);
 }
+.btn_hamburger {
+  position: absolute;
+  right: 20px;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 1100;
+}
+.btn_hamburger span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+.btn_hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.btn_hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.btn_hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (max-width: 1024px) {
+
+  .btn_hamburger {
+    display: block;
+  }
+
+  .gnb {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  .gnb.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .gnb_left,
+  .gnb_right {
+    position: static;
+  }
+
+  .gnb > ul {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .gnb_menu::after {
+    display: none;
+  }
+
+  .sub_menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    padding: 10px 0 0;
+  }
+}
+
+
 /* FOOTER */
 .footer {
   background: #111;
@@ -165,7 +244,30 @@
 }
 .sns_links {
   display: flex;
+  justify-content: center;
   gap: 8px;
+}
+@media (max-width: 1024px) {
+  .footer_inner {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  .footer_links {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .footer_bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .footer_links {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 /* common */
@@ -205,6 +307,24 @@ body {
   background: #fff;
   transform: scale(1.4);
 }
+@media (max-width: 1024px) {
+  html, body {
+    scroll-behavior: auto;
+  }
+  .page {
+    height: auto;
+    min-height: 100vh;
+  }
+  .pager {
+    display: none;
+  }
+  section {
+    padding: 0 10px;
+  }
+  .value_text p {
+    font-size: 1.3rem;
+  }
+}
 
 /* reset */
 * {
@@ -229,6 +349,7 @@ ol, ul {
 }
 a {
   text-decoration: none;
+  color: #111;
 }
 img {
   width: 100%;

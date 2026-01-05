@@ -13,16 +13,21 @@
 
   <div class="wrap">
     <!-- video_section -->
-    <section class="page video_section">
-      <video src="assets/vid/vid-main.webm" autoplay loop muted playsinline></video>
-      <div class="video_overlay">
-        <img src="assets/img/lol_Logo.avif" alt="Logo">
-        <h3>리그 오브 레전드는 팀끼리 전투를 펼치고 상대 넥서스를 파괴해야 하는 5대5 MOBA 게임입니다.</h3>
-        <a class="btn_w" href="#">무료로 플레이하기</a>
+    <div class="page video_section">
+      <div class="video_inner">
+        <video src="assets/vid/vid-main.webm" autoplay loop muted playsinline></video>
+
+        <div class="video_overlay"></div>
+
+        <div class="video_content">
+          <img src="assets/img/lol_Logo.avif" alt="Logo">
+          <h3>리그 오브 레전드는 팀끼리 전투를 펼치고<br>상대 넥서스를 파괴해야 하는 5대5 MOBA 게임입니다.</h3>
+          <a class="btn_w" href="#">무료로 플레이하기</a>
+        </div>
       </div>
-    </section>
+    </div>
     <!-- value_section -->
-    <section class="page value_section">
+    <div class="page value_section">
       <div class="value_inner">
         <div class="value_overlay">
           <div class="value_text">
@@ -32,7 +37,7 @@
             <a class="btn_w" href="#">지금 플레이하기</a>
           </div>
         </div>
-        <img class="char show" src="assets/img/befd42ad6d2564159a441d08cfc3bf511532eb74-1628x1628.webp" alt="champion">
+        <!-- <img class="char show" src="assets/img/befd42ad6d2564159a441d08cfc3bf511532eb74-1628x1628.webp" alt="champion"> -->
         <ul class="value_list">
           <li class="value_item active" data-bg="assets/img/Akali_0.jpg"
             data-char="assets/img/befd42ad6d2564159a441d08cfc3bf511532eb74-1628x1628.webp">
@@ -66,7 +71,7 @@
           </li>
         </ul>
       </div>
-    </section>
+    </div>
     <script>
       const items = document.querySelectorAll('.value_item');
       const valueInner = document.querySelector('.value_inner');
@@ -95,43 +100,44 @@
         });
       });
     </script>
-    <!--  -->
-    <section class="page play_section">
-        <div class="play_inner">
-          <div class="play_left">
-            <div class="skin_img">
-              <img src="assets/img/76c98a7d43d4185e9ce1c9e0cd6f9647fed75acd-1304x1304.webp" alt="챔피언 스킨">
-            </div>
-            <h3>개성 있는 <span>챔피언 스킨</span></h3>
-            <p>좋아하는 챔피언의 외형을 변경해 보세요.</p>
-            <a href="#" class="btn_w">지금 플레이하기</a>
+    <!-- play_section -->
+    <div class="page play_section">
+      <div class="play_inner">
+        <div class="play_left">
+          <div class="skin_img">
+            <img src="assets/img/76c98a7d43d4185e9ce1c9e0cd6f9647fed75acd-1304x1304.webp" alt="챔피언 스킨">
           </div>
-
-          <div class="play_right">
-            <ul class="mode_list">
-              <li class="mode_item active" data-video="videos/rift.mp4">
-                <img src="images/mode_rift.jpg" alt="">
-                <span>소환사의 협곡</span>
-              </li>
-              <li class="mode_item" data-video="videos/aram.mp4">
-                <img src="images/mode_aram.jpg" alt="">
-                <span>무작위 총력전</span>
-              </li>
-              <li class="mode_item" data-video="videos/tft.mp4">
-                <img src="images/mode_tft.jpg" alt="">
-                <span>전략적 팀 전투</span>
-              </li>
-            </ul>
-
-            <div class="video_area">
-              <video id="mode_video" autoplay muted loop playsinline>
-                <source src="videos/rift.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
+          <h3>개성 있는 <span>챔피언 스킨</span></h3>
+          <p>좋아하는 챔피언의 외형을 변경해 보세요.</p>
+          <a href="#" class="btn_w">지금 플레이하기</a>
         </div>
-    </section>
+
+        <div class="play_right">
+          <h3>다양하게 <span>플레이</span></h3>
+          <ul class="mode_list">
+            <li class="mode_item active" data-video="assets/vid/bbc27473157462adacf0de441a8796268eb2d0ac.mp4">
+              <img src="assets/img/e50f5eb867949248d81b3c4a1dcb3e7d7cf187de-440x440.webp" alt="소환사의 협곡">
+              <p>소환사의 협곡</p>
+            </li>
+            <li class="mode_item" data-video="assets/vid/0a9b9f8dacb54086c58c1af8aa880d7cf6d7fea6.mp4">
+              <img src="assets/img/88a013a106668103aedbceb8f174bd4cbc06568b-440x440.avif" alt="무작위 총력전">
+              <p>무작위 총력전</p>
+            </li>
+            <li class="mode_item" data-video="assets/vid/e5791dbc0787a96e83b82df20d44375f09f4d861.mp4">
+              <img src="assets/img/d1df552539dd70a8ffd38b6e93d1e751fb980ea6-440x440.webp" alt="전략적 팀 전투">
+              <p>전략적 팀 전투</p>
+            </li>
+          </ul>
+
+          <div class="video_area">
+            <video id="mode_video" autoplay muted loop playsinline>
+              <source src="videos/rift.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <script>
       const modeItems = document.querySelectorAll('.mode_item');
       const video = document.getElementById('mode_video');
@@ -147,12 +153,14 @@
         });
       });
     </script>
-
     <!-- highlight_section -->
     <section class="page highlight_section">
-      <div class="video_section">
-        <video src="assets/vid/LOL_HOME_Footer_Masthead_Video.mp4" autoplay loop muted playsinline></video>
-        <div class="video_overlay">
+      <div class="video_inner m_video">
+        <video src="assets/vid/vid-main.webm" autoplay loop muted playsinline></video>
+
+        <div class="video_overlay"></div>
+
+        <div class="video_content">
           <a class="btn_w" href="#">무료로 플레이하기</a>
         </div>
       </div>

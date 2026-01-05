@@ -79,9 +79,28 @@ $(document).ready(function () {
             </li>
           </ul>
         </nav>
+        <button class="btn_hamburger" aria-label="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
   </header>
   `;
 
   $("#header").append(header);
+
+
+  const btn = document.querySelector('.btn_hamburger');
+  const gnb = document.querySelectorAll('.gnb');
+
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    gnb.forEach(menu => {
+      menu.classList.toggle('active');
+    });
+  });
+
+
+
 });
